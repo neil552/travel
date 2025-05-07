@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
             subtotal += item.precio * item.cantidad;
         });
 
-        const impuestos = subtotal * 0.10;
+        const impuestos = subtotal * 0.20;
         const total = subtotal + impuestos;
 
         if(subtotalPriceElement) subtotalPriceElement.textContent = `$${subtotal.toFixed(2)}`;
