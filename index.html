@@ -28,11 +28,8 @@
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
-    <!-- Video de fondo -->
-    <video id="video-background" autoplay muted playsinline>
-        <source src="video/video2.mp4" type="video/mp4">
-        Tu navegador no soporta el video de fondo.
-    </video>
+<!-- Imagen de fondo -->
+<img id="background-image" src="img/bosque.jpg" alt="Fondo" style="width: 100%; height: auto;">
 
     <!-- Contenido principal -->
     <div class="content-overlay flex flex-col min-h-screen">
@@ -112,27 +109,7 @@
           });
         });
       </script>
-    <!-- Scripts -->
-    <script defer>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // Reproducción de varios videos secuencialmente
-        const videoElement = document.getElementById('video-background');
-        const sourceElement = videoElement.querySelector('source');
-
-        const videos = [
-            'video/video3.mp4',
-        ];
-
-        let currentVideo = 0;
-
-        videoElement.addEventListener('ended', () => {
-            currentVideo = (currentVideo + 1) % videos.length;
-            sourceElement.src = videos[currentVideo];
-            videoElement.load();
-            videoElement.play();
-        });
-    </script>
     <script src="js/script.js" defer></script>
 </body>
 </html>
