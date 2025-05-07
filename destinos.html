@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinos - MundoTravel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-blue-600 text-white shadow-md">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center relative">
+            <a href="index.html" class="text-2xl font-bold">MundoTravel</a>
+
+            <div class="md:hidden">
+                <button id="hamburger-button" aria-label="Abrir menú" aria-expanded="false" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu"
+                 class="hidden
+                        absolute w-full left-0 right-0 top-full bg-blue-700 p-4 z-20
+                        md:relative md:flex md:items-center md:w-auto md:top-auto md:left-auto md:right-auto md:bg-transparent md:p-0 md:z-auto md:space-x-3">
+                <a href="index.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md:py-2">Inicio</a>
+                <a href="destinos.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md:py-2">Destinos</a>
+                <a href="nosotros.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md-py-2">Nosotros</a>
+                <a href="contacto.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md-py-2">Contacto</a>
+                <a href="servicios.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md-py-2">
+                    <i class="fas fa-shopping-cart"></i> Servicios
+                    <span id="cart-count" class="bg-red-500 text-xs rounded-full px-1.5 py-0.5 ml-1">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <h1 class="text-4xl font-bold text-center mb-12 text-blue-700">Nuestros Destinos Populares</h1>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="img/París_Francia.jpg" alt="París" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold mb-2 text-blue-600">París, Francia</h2>
+                    <p class="text-gray-600 mb-4">La ciudad del amor, la luz y el arte. Descubre la Torre Eiffel, el Louvre y sus encantadoras calles.</p>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <span class="text-2xl" title="Cultura y Ciudad">🏙️</span>
+                        <span class="text-2xl" title="Gastronomía">🍷</span>
+                        <span class="text-2xl" title="Arte">🎨</span>
+                    </div>
+                    <button onclick="agregarAlCarrito('Paquete París', 1200, '2025-09-15')" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-300">
+                        Cotizar Viaje
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="img/Machu_Picchu,_Peru_(2018).jpg" alt="Machu Picchu" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold mb-2 text-blue-600">Machu Picchu, Perú</h2>
+                    <p class="text-gray-600 mb-4">La ciudadela inca perdida en los Andes. Una maravilla del mundo llena de misterio e historia.</p>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <span class="text-2xl" title="Aventura y Montaña">🧗</span>
+                        <span class="text-2xl" title="Cultura e Historia">🗺️</span>
+                        <span class="text-2xl" title="Naturaleza">🏞️</span>
+                    </div>
+                    <button onclick="agregarAlCarrito('Paquete Machu Picchu', 950, '2025-10-20')" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-300">
+                        Cotizar Viaje
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="img/tailandia.jpg" alt="Tailandia" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold mb-2 text-blue-600">Tailandia</h2>
+                    <p class="text-gray-600 mb-4">Playas exóticas, templos dorados y una cultura vibrante. El paraíso del sudeste asiático te espera.</p>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <span class="text-2xl" title="Playas">🏖️</span>
+                        <span class="text-2xl" title="Cultura y Templos">🏯</span>
+                        <span class="text-2xl" title="Naturaleza Exótica">🌴</span>
+                    </div>
+                    <button onclick="agregarAlCarrito('Paquete Tailandia', 1500, '2025-11-05')" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-300">
+                        Cotizar Viaje
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="img/kioto.jpg" alt="Kioto" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold mb-2 text-blue-600">Kioto, Japón</h2>
+                    <p class="text-gray-600 mb-4">El corazón cultural de Japón, con templos antiguos, jardines zen y la belleza de las geishas.</p>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <span class="text-2xl" title="Cultura y Tradición">🌸</span>
+                        <span class="text-2xl" title="Templos">🏯</span>
+                        <span class="text-2xl" title="Gastronomía">🍣</span>
+                    </div>
+                    <button onclick="agregarAlCarrito('Paquete Kioto', 1800, '2026-04-10')" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-300">
+                        Cotizar Viaje
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="img/italia-roma.jpg" alt="Roma" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold mb-2 text-blue-600">Roma, Italia</h2>
+                    <p class="text-gray-600 mb-4">La "Ciudad Eterna", llena de historia, arte, ruinas antiguas y deliciosa comida.</p>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <span class="text-2xl" title="Historia Antigua">🏛️</span>
+                        <span class="text-2xl" title="Arte y Arquitectura">🎨</span>
+                        <span class="text-2xl" title="Gastronomía">🍝</span>
+                    </div>
+                    <button onclick="agregarAlCarrito('Paquete Roma', 1100, '2026-06-25')" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-300">
+                        Cotizar Viaje
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="img/cairo-egipto.jpg" alt="El Cairo" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold mb-2 text-blue-600">El Cairo, Egipto</h2>
+                    <p class="text-gray-600 mb-4">Explora las Pirámides de Giza, la Esfinge y la rica historia del antiguo Egipto.</p>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <span class="text-2xl" title="Historia Antigua">🏺</span>
+                        <span class="text-2xl" title="Cultura">📜</span>
+                        <span class="text-2xl" title="Monumentos">🕌</span>
+                    </div>
+                    <button onclick="agregarAlCarrito('Paquete El Cairo', 1350, '2026-08-18')" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-300">
+                        Cotizar Viaje
+                    </button>
+                </div>
+            </div>
+             </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 px-6 mt-12">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-lg font-semibold mb-4">MundoTravel</h3>
+                <p class="text-gray-400 text-sm">
+                    Tu puerta de entrada a las aventuras más emocionantes alrededor del globo. Creamos experiencias de viaje inolvidables.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
+                <ul>
+                    <li class="mb-2"><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300">Inicio</a></li>
+                    <li class="mb-2"><a href="destinos.html" class="text-gray-400 hover:text-white transition-colors duration-300">Destinos</a></li>
+                    <li class="mb-2"><a href="nosotros.html" class="text-gray-400 hover:text-white transition-colors duration-300">Nosotros</a></li>
+                    <li class="mb-2"><a href="contacto.html" class="text-gray-400 hover:text-white transition-colors duration-300">Contacto</a></li>
+                    <li class="mb-2"><a href="servicios.html" class="text-gray-400 hover:text-white transition-colors duration-300">Servicios</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Síguenos</h3>
+                <div class="flex space-x-4 mb-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-facebook-square text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-twitter-square text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-instagram-square text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-linkedin text-2xl"></i></a>
+                </div>
+                <h3 class="text-lg font-semibold mb-4">Contacto</h3>
+                 <p class="text-gray-400 text-sm mb-2">Email: info@mundotravel.com</p>
+                 <p class="text-gray-400 text-sm">Teléfono: +123 456 7890</p>
+            </div>
+        </div>
+
+        <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
+            <p>&copy; <span id="currentYear"></span> MundoTravel. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <audio id="musica" loop>
+        <source src="audio/Crazy Frog - Axel F (Official Video).mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+      </audio>
+      
+      <script>
+        window.addEventListener('load', function () {
+          var audio = document.getElementById("musica");
+          audio.play().catch(function(error) {
+            console.log("El navegador bloqueó la reproducción automática. El usuario debe interactuar primero.");
+          });
+        });
+      </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

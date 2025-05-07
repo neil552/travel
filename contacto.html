@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - MundoTravel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-blue-600 text-white shadow-md">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center relative">
+            <a href="index.html" class="text-2xl font-bold">MundoTravel</a>
+    
+            <div class="md:hidden">
+                <button id="hamburger-button" aria-label="Abrir menú" aria-expanded="false" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg>
+                </button>
+            </div>
+    
+            <div id="mobile-menu"
+                 class="hidden
+                        absolute w-full left-0 right-0 top-full bg-blue-700 p-4 z-20
+                        md:relative md:flex md:items-center md:w-auto md:top-auto md:left-auto md:right-auto md:bg-transparent md:p-0 md:z-auto md:space-x-3">
+                <a href="index.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md:py-2">Inicio</a>
+                <a href="destinos.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md:py-2">Destinos</a>
+                <a href="nosotros.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md:py-2">Nosotros</a>
+                <a href="contacto.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md:py-2">Contacto</a>
+                <a href="servicios.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md:py-2">
+                    <i class="fas fa-shopping-cart"></i> Servicios
+                    <span id="cart-count" class="bg-red-500 text-xs rounded-full px-1.5 py-0.5 ml-1">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <h1 class="text-4xl font-bold text-center mb-10 text-blue-700">Contáctanos</h1>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-6">Envíanos un Mensaje</h2>
+                <form id="contactForm">
+                    <div class="mb-4">
+                        <label for="nombre" class="block text-gray-700 text-sm font-bold mb-2">Nombre Completo:</label>
+                        <input type="text" id="nombre" name="nombre" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Tu Nombre">
+                    </div>
+                    <div class="mb-4">
+                        <label for="correo" class="block text-gray-700 text-sm font-bold mb-2">Correo Electrónico:</label>
+                        <input type="email" id="correo" name="correo" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="tu@correo.com">
+                    </div>
+                    <div class="mb-4">
+                        <label for="destino" class="block text-gray-700 text-sm font-bold mb-2">Destino Preferido (Opcional):</label>
+                        <select id="destino" name="destino" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="">Selecciona un destino</option>
+                            <option value="Paris">París</option>
+                            <option value="Machu Picchu">Machu Picchu</option>
+                            <option value="Tailandia">Tailandia</option>
+                            <option value="Otro">Otro (especificar en mensaje)</option>
+                        </select>
+                    </div>
+                    <div class="mb-6">
+                        <label for="mensaje" class="block text-gray-700 text-sm font-bold mb-2">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Escribe tu consulta aquí..."></textarea>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">
+                            Enviar Mensaje
+                        </button>
+                    </div>
+                </form>
+                <p id="form-message" class="mt-4 text-sm"></p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-6">Nuestra Ubicación</h2>
+                <p class="text-gray-700 mb-2"><i class="fas fa-map-marker-alt mr-2 text-blue-500"></i> Calle Falsa 123, Ciudad Ejemplo, País</p>
+                <p class="text-gray-700 mb-2"><i class="fas fa-phone mr-2 text-blue-500"></i> +12 345 67890</p>
+                <p class="text-gray-700 mb-6"><i class="fas fa-envelope mr-2 text-blue-500"></i> info@mundotravel.com</p>
+
+                <div class="mb-6">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-3">Mapa del Sitio</h3>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li><a href="index.html" class="hover:text-blue-500">Inicio</a></li>
+                        <li><a href="destinos.html" class="hover:text-blue-500">Destinos</a></li>
+                        <li><a href="nosotros.html" class="hover:text-blue-500">Nosotros</a></li>
+                        <li><a href="contacto.html" class="hover:text-blue-500">Contacto</a></li>
+                        <li><a href="servicios.html" class="hover:text-blue-500">Servicios (Carrito)</a></li>
+                    </ul>
+                </div>
+
+                <h3 class="text-xl font-semibold text-blue-600 mb-3">Encuéntranos en Google Maps</h3>
+                <div class="aspect-w-16 aspect-h-9">
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.930993248966!2d-77.03009568518728!3d-12.047034991468013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8b5d6e1e8b3%3A0x4b3f5b8f6f8f8f8f!2sPlaza%20Mayor%20de%20Lima!5e0!3m2!1ses!2spe!4v1678886543210!5m2!1ses!2spe"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 px-6 mt-12">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-lg font-semibold mb-4">MundoTravel</h3>
+                <p class="text-gray-400 text-sm">
+                    Tu puerta de entrada a las aventuras más emocionantes alrededor del globo. Creamos experiencias de viaje inolvidables.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
+                <ul>
+                    <li class="mb-2"><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300">Inicio</a></li>
+                    <li class="mb-2"><a href="destinos.html" class="text-gray-400 hover:text-white transition-colors duration-300">Destinos</a></li>
+                    <li class="mb-2"><a href="nosotros.html" class="text-gray-400 hover:text-white transition-colors duration-300">Nosotros</a></li>
+                    <li class="mb-2"><a href="contacto.html" class="text-gray-400 hover:text-white transition-colors duration-300">Contacto</a></li>
+                    <li class="mb-2"><a href="servicios.html" class="text-gray-400 hover:text-white transition-colors duration-300">Servicios</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Síguenos</h3>
+                <div class="flex space-x-4 mb-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-facebook-square text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-twitter-square text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-instagram-square text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-linkedin text-2xl"></i></a>
+                </div>
+                <h3 class="text-lg font-semibold mb-4">Contacto</h3>
+                 <p class="text-gray-400 text-sm mb-2">Email: info@mundotravel.com</p>
+                 <p class="text-gray-400 text-sm">Teléfono: +123 456 7890</p>
+            </div>
+        </div>
+
+        <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
+            <p>&copy; <span id="currentYear"></span> MundoTravel. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <audio id="musica" loop>
+        <source src="audio/Crazy Frog - Axel F (Official Video).mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+      </audio>
+      
+      <script>
+        window.addEventListener('load', function () {
+          var audio = document.getElementById("musica");
+          audio.play().catch(function(error) {
+            console.log("El navegador bloqueó la reproducción automática. El usuario debe interactuar primero.");
+          });
+        });
+      </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

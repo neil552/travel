@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Inicio - MundoTravel</title>
+    <meta name="description" content="MundoTravel: Explora el mundo con nuestra agencia de viajes especializada en destinos inolvidables."/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+          integrity="sha512-Fo3rlrZj/k7ujTnH1z8Y3rXZxyHg3grPSy9Gv3I8T1e4VcJLzrk8qR3Nidw6vZ7Hn+JrKQGZp8S4yZXgQ9f1FA==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            z-index: -100;
+        }
+        .content-overlay {
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Video de fondo -->
+    <video id="video-background" autoplay muted playsinline>
+        <source src="video/video2.mp4" type="video/mp4">
+        Tu navegador no soporta el video de fondo.
+    </video>
+
+    <!-- Contenido principal -->
+    <div class="content-overlay flex flex-col min-h-screen">
+        <header class="bg-blue-600 text-white shadow-md">
+            <nav class="container mx-auto px-6 py-3 flex justify-between items-center relative">
+                <a href="index.html" class="text-2xl font-bold">MundoTravel</a>
+
+                <div class="md:hidden">
+                    <button id="hamburger-button" aria-label="Abrir menú" aria-expanded="false" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div id="mobile-menu"
+                    class="hidden absolute w-full left-0 right-0 top-full bg-blue-700 p-4 z-20
+                           md:relative md:flex md:items-center md:w-auto md:top-auto md:left-auto md:right-auto md:bg-transparent md:p-0 md:z-auto md:space-x-3">
+                    <a href="index.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md:py-2">Inicio</a>
+                    <a href="destinos.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md:py-2">Destinos</a>
+                    <a href="nosotros.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md:py-2">Nosotros</a>
+                    <a href="contacto.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md:py-2">Contacto</a>
+                    <a href="servicios.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md:py-2">
+                        <i class="fas fa-shopping-cart"></i> Servicios
+                        <span id="cart-count" class="bg-red-500 text-xs rounded-full px-1.5 py-0.5 ml-1">0</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="flex-grow flex flex-col items-center justify-center text-center text-white px-4">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">Tu aventura empieza aquí</h1>
+            <p class="text-xl md:text-3xl mb-6">Explora el mundo con nosotros</p>
+            <a href="destinos.html"
+               class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+               Ver destinos
+            </a>
+        </main>
+
+        <footer class="bg-gray-800 text-white py-8 px-6 mt-12">
+            <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">MundoTravel</h3>
+                    <p class="text-gray-400 text-sm">
+                        Tu puerta de entrada a las aventuras más emocionantes alrededor del globo. Creamos experiencias de viaje inolvidables.
+                    </p>
+                </div>
+                <div>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-facebook-square text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-twitter-square text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-instagram-square text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-linkedin text-2xl"></i></a>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-4">Contacto</h3>
+                     <p class="text-gray-400 text-sm mb-2">Email: info@mundotravel.com</p>
+                     <p class="text-gray-400 text-sm">Teléfono: +123 456 7890</p>
+                </div>
+            </div>
+
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; <span id="currentYear"></span> MundoTravel. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+    <audio id="musica" loop>
+        <source src="audio/Crazy Frog - Axel F (Official Video).mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+      </audio>
+      
+      <script>
+        window.addEventListener('load', function () {
+          var audio = document.getElementById("musica");
+          audio.play().catch(function(error) {
+            console.log("El navegador bloqueó la reproducción automática. El usuario debe interactuar primero.");
+          });
+        });
+      </script>
+    <!-- Scripts -->
+    <script defer>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Reproducción de varios videos secuencialmente
+        const videoElement = document.getElementById('video-background');
+        const sourceElement = videoElement.querySelector('source');
+
+        const videos = [
+            'video/video3.mp4',
+        ];
+
+        let currentVideo = 0;
+
+        videoElement.addEventListener('ended', () => {
+            currentVideo = (currentVideo + 1) % videos.length;
+            sourceElement.src = videos[currentVideo];
+            videoElement.load();
+            videoElement.play();
+        });
+    </script>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

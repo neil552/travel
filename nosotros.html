@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - MundoTravel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos básicos para el organigrama */
+        .org-chart ul {
+            padding-top: 20px; position: relative;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+        .org-chart li {
+            float: left; text-align: center;
+            list-style-type: none;
+            position: relative;
+            padding: 20px 5px 0 5px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+        .org-chart li::before, .org-chart li::after{
+            content: '';
+            position: absolute; top: 0; right: 50%;
+            border-top: 2px solid #ccc;
+            width: 50%; height: 20px;
+        }
+        .org-chart li::after{
+            right: auto; left: 50%;
+            border-left: 2px solid #ccc;
+        }
+        .org-chart li:only-child::after, .org-chart li:only-child::before {
+            display: none;
+        }
+        .org-chart li:only-child{ padding-top: 0;}
+        .org-chart li:first-child::before, .org-chart li:last-child::after{
+            border: 0 none;
+        }
+        .org-chart li:last-child::before{
+            border-right: 2px solid #ccc;
+            border-radius: 0 5px 0 0;
+            -webkit-border-radius: 0 5px 0 0;
+            -moz-border-radius: 0 5px 0 0;
+        }
+        .org-chart li:first-child::after{
+            border-radius: 5px 0 0 0;
+            -webkit-border-radius: 5px 0 0 0;
+            -moz-border-radius: 5px 0 0 0;
+        }
+        .org-chart ul ul::before{
+            content: '';
+            position: absolute; top: 0; left: 50%;
+            border-left: 2px solid #ccc;
+            width: 0; height: 20px;
+        }
+        .org-chart li div{
+            border: 2px solid #ccc;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            background-color: #fff;
+            display: inline-block;
+            border-radius: 5px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+        .org-chart li div:hover, .org-chart li div:hover+ul li div {
+            background: #c8e4f8; color: #000; border: 2px solid #94a0b4;
+        }
+        .org-chart li div:hover+ul li::after,
+        .org-chart li div:hover+ul li::before,
+        .org-chart li div:hover+ul::before,
+        .org-chart li div:hover+ul ul::before{
+            border-color:  #94a0b4;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-blue-600 text-white shadow-md"> <header class="bg-blue-600 text-white shadow-md"> <nav class="container mx-auto px-6 py-3 flex justify-between items-center relative">
+                </nav>
+        </header>
+    </header> 
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-blue-600 text-white shadow-md"> <nav class="container mx-auto px-6 py-3 flex justify-between items-center relative">
+            <a href="index.html" class="text-2xl font-bold">MundoTravel</a>
+
+            <div class="md:hidden">
+                <button id="hamburger-button" aria-label="Abrir menú" aria-expanded="false" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu"
+                 class="hidden
+                        absolute w-full left-0 right-0 top-full bg-blue-700 p-4 z-20
+                        md:relative md:flex md:items-center md:w-auto md:top-auto md:left-auto md:right-auto md:bg-transparent md:p-0 md:z-auto md:space-x-3">
+                <a href="index.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md:py-2">Inicio</a>
+                <a href="destinos.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md:py-2">Destinos</a>
+                <a href="nosotros.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md:py-2">Nosotros</a>
+                <a href="contacto.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md:py-2">Contacto</a>
+                <a href="servicios.html" class="block text-white py-2 px-4 rounded hover:bg-blue-500 md:px-3 md:py-2">
+                    <i class="fas fa-shopping-cart"></i> Servicios
+                    <span id="cart-count" class="bg-red-500 text-xs rounded-full px-1.5 py-0.5 ml-1">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main class="container mx-auto px-6 py-8">
+        <section class="mb-12">
+            <h1 class="text-4xl font-bold text-center mb-8 text-blue-700">Sobre Nosotros</h1>
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-3">Nuestra Historia</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Fundada en 2010 por un grupo de entusiastas de los viajes, MundoTravel nació con el sueño de hacer que las experiencias de viaje fueran accesibles y memorables para todos. Comenzamos como una pequeña oficina local, enfocándonos en destinos nacionales, y gracias a la confianza de nuestros clientes y la dedicación de nuestro equipo, hemos crecido hasta convertirnos en un referente de viajes personalizados en la región.
+                </p>
+            </div>
+        </section>
+
+        <section class="mb-12 grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-3">Misión</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    "Conectar personas con culturas, creando experiencias de viaje auténticas y enriquecedoras que abran mentes y fomenten el entendimiento global."
+                </p>
+            </div>
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold text-blue-600 mb-3">Visión</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    "Liderar el turismo personalizado en LATAM, siendo reconocidos por nuestra innovación, sostenibilidad y el impacto positivo que generamos en nuestros viajeros y las comunidades que visitamos."
+                </p>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8 text-blue-700">Nuestro Equipo - Organigrama</h2>
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                <div class="org-chart">
+                    <ul>
+                        <li>
+                            <div>Director General</div>
+                            <ul>
+                                <li>
+                                    <div>Asesor de Viajes Senior</div>
+                                    <ul>
+                                        <li><div>Asesor de Viajes Jr.</div></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div>Coordinador de Logística</div>
+                                    <ul>
+                                        <li><div>Asistente de Logística</div></li>
+                                    </ul>
+                                </li>
+                                 <li>
+                                    <div>Asesor de Viajes Especialista</div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <p class="mt-6 text-sm text-gray-600">
+                    Este es un organigrama simplificado para mostrar nuestra estructura.
+                    Nivel 1: Dirección. Nivel 2: Asesores y Coordinadores. Nivel 3: Equipo de Soporte y Especialistas.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 px-6 mt-12">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-lg font-semibold mb-4">MundoTravel</h3>
+                <p class="text-gray-400 text-sm">
+                    Tu puerta de entrada a las aventuras más emocionantes alrededor del globo. Creamos experiencias de viaje inolvidables.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
+                <ul>
+                    <li class="mb-2"><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300">Inicio</a></li>
+                    <li class="mb-2"><a href="destinos.html" class="text-gray-400 hover:text-white transition-colors duration-300">Destinos</a></li>
+                    <li class="mb-2"><a href="nosotros.html" class="text-gray-400 hover:text-white transition-colors duration-300">Nosotros</a></li>
+                    <li class="mb-2"><a href="contacto.html" class="text-gray-400 hover:text-white transition-colors duration-300">Contacto</a></li>
+                    <li class="mb-2"><a href="servicios.html" class="text-gray-400 hover:text-white transition-colors duration-300">Servicios</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Síguenos</h3>
+                <div class="flex space-x-4 mb-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-facebook-square text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-twitter-square text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-instagram-square text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-linkedin text-2xl"></i></a>
+                </div>
+                <h3 class="text-lg font-semibold mb-4">Contacto</h3>
+                 <p class="text-gray-400 text-sm mb-2">Email: info@mundotravel.com</p>
+                 <p class="text-gray-400 text-sm">Teléfono: +123 456 7890</p>
+            </div>
+        </div>
+
+        <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
+            <p>&copy; <span id="currentYear"></span> MundoTravel. Todos los derechos reservados.</p>
+        </div>
+        <audio id="musica" loop>
+            <source src="audio/Crazy Frog - Axel F (Official Video).mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+          </audio>
+          
+          <script>
+            window.addEventListener('load', function () {
+              var audio = document.getElementById("musica");
+              audio.play().catch(function(error) {
+                console.log("El navegador bloqueó la reproducción automática. El usuario debe interactuar primero.");
+              });
+            });
+          </script>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
